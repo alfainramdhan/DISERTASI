@@ -9,7 +9,7 @@ Tampilan dan fitur sama dengan prototipe artifact; Streamlit dipakai sebagai wad
 |---|---|---|
 | AI | AI DECISION (BARU) | Ringkasan, ranking, performa 50 kriteria, bandingkan, indeks hijau, bobot, risiko, model |
 | H | Hub & Vendor Management | Verifikasi 4 stakeholder, Profil 360, scorecard performa, sinkronisasi SAP |
-| A | Acquisition & E-Procurement | Info lelang, proses pengadaan, sertifikasi K3/CQSMS (dengan badge notifikasi) |
+| A | Acquisition & E-Procurement | Info lelang, proses pengadaan, **Pemenang Lelang & Approval** (7 stakeholder, jabatan, tanggal approve, alasan tidak disetujui), sertifikasi K3/CQSMS |
 | I | Invoice & Payment System | Pipeline approval 6 tahap, SLA aging, riwayat approver |
 | D | Digital & Smart Contract | Kontrak aktif, masa berlaku dan adendum |
 | A | Asset & Operational Logistics | Pengiriman dan penerimaan material |

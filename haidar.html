@@ -253,6 +253,9 @@ tr.grp td{background:var(--sub);padding:9px 12px;font-size:13px;border-bottom:1p
 .wsl{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 54px;gap:12px;align-items:center;font-size:14px}.wsl input[type=range]{width:100%;accent-color:var(--acc)}.wsl output{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
 details summary{font-weight:700}
 @media(max-width:600px){.wsl{grid-template-columns:1fr 1fr 48px}}
+.dtabs button{flex:none}
+.modal.wide{width:min(1020px,calc(100vw - 24px))}
+.vd i.n{background:var(--bads);color:var(--bad);border-color:transparent}.vd i.w{background:var(--warns);color:var(--warn);border-color:transparent}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes slide{from{transform:translateX(40px);opacity:.4}to{transform:none;opacity:1}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -307,14 +310,14 @@ const D=n=>({d:n}),M=n=>({m:n});
 const toast=t=>{const e=document.createElement('div');e.className='tst';e.textContent=t;$('#toast').append(e);setTimeout(()=>e.remove(),3200)};
 
 /* ---------- master ---------- */
-const USER={nama:'Rina Kartika',ini:'RK',jabatan:'Manajer Pengadaan',divisi:'Divisi Infrastruktur 1',tim:'Tim Supply Chain Management'};
+const USER={nama:'Arif Haidar N S',ini:'AH',jabatan:'VPO',divisi:'Divisi Infrastruktur 1',tim:'Tim Supply Chain Management'};
 const MENU=[
 {L:'H',t:'Hub & Vendor Management',cat:'Hub & Vendor',st:'Aktif',def:'Dashboard Rekanan',d:'Registrasi, verifikasi 4 stakeholder, profil 360° dan performa rekanan.',subs:['Dashboard Rekanan','Bakal Calon Rekanan','Calon Perorangan','Calon Rekanan','Rekanan Terseleksi','Rekanan Internasional','Pengkinian Data Lama','Cek Posisi Rekanan','Semua Rekanan']},
 {L:'R',t:'Requisition, Purchasing & Catalog',cat:'Requisition & Catalog',st:'Aktif',d:'Permintaan pembelian, penerbitan PO, katalog harga satuan dan rencana umum pengadaan.',subs:['Permintaan Pembelian / SPB','Pesanan Pembelian / PO','Katalog Harga Satuan','Rencana Umum Pengadaan']},
 {L:'A',t:'Asset & Operational Logistics',cat:'Asset & Logistics',st:'Aktif',d:'Pelacakan pengiriman material dan penerimaan barang di proyek.',subs:['Pemantauan Pengiriman Material','Penerimaan Barang Proyek']},
 {L:'D',t:'Digital & Smart Contract',cat:'Digital Contract',st:'Freeze',d:'Daftar kontrak aktif, masa berlaku dan adendum.',subs:['Daftar Kontrak Aktif','Monitoring Masa Berlaku & Adendum']},
 {L:'I',t:'Invoice & Payment System',cat:'Invoice & Payment',st:'Aktif',def:'Monitoring Status Tagihan',d:'Penagihan rekanan dengan approval berjenjang 5 tahap.',subs:['Tagihan Proyek','Tagihan Operasional/Kantor Pusat','Post Invoice','Monitoring Status Tagihan']},
-{L:'A',t:'Acquisition & E-Procurement',cat:'Acquisition',st:'Aktif',d:'Informasi lelang, proses pengadaan dan sertifikasi K3/CQSMS.',subs:['Info Lelang','Proses Pengadaan','Sertifikasi K3/CQSMS']},
+{L:'A',t:'Acquisition & E-Procurement',cat:'Acquisition',st:'Aktif',d:'Informasi lelang, proses pengadaan, pemenang lelang dengan approval stakeholder dan sertifikasi K3/CQSMS.',subs:['Info Lelang','Proses Pengadaan','Pemenang Lelang & Approval','Sertifikasi K3/CQSMS']},
 {L:'K',hide:1,t:'Katalog & RUP',cat:'Katalog',st:'Non-Aktif',d:'Katalog harga satuan dan rencana umum pengadaan.',subs:['Katalog Harga Satuan','Rencana Umum Pengadaan']},
 {L:'',t:'Settings & Tutorial',cat:'Settings',st:'Aktif',d:'Profil pengguna, panduan demo dan reset data contoh.',subs:[]},
 {L:'AI',t:'AI DECISION',cat:'AI Decision',st:'Aktif',def:'Ringkasan AI Decision',d:'Keputusan pemilihan vendor, subkon dan mandor dari 50 kriteria termasuk Green Supply Chain.',subs:['Ringkasan AI Decision','Ranking & Rekomendasi Vendor','Performa 50 Kriteria','Bandingkan Vendor','Indeks Hijau (GSCM)','Bobot & Kriteria Penilaian','Peringatan Risiko','Model & Algoritma']}];
@@ -414,10 +417,10 @@ const GEN={
 ['LL-2026-109','Survei topografi LRT Koridor Timur',M(1250000000),D(-8),'9 rekanan','Evaluasi'],
 ['LL-2026-097','Bekisting sistem Tower B',M(3400000000),D(-30),'6 rekanan','Selesai']]},
 'Proses Pengadaan':{c:['Paket','Metode','Tahapan','PIC','Target selesai','Status'],r:[
-['Elevator & eskalator RSUD Mataram','Lelang terbuka','Aanwijzing','Rina Kartika',D(21),'Berjalan'],
+['Elevator & eskalator RSUD Mataram','Lelang terbuka','Aanwijzing','Arif Haidar N S',D(21),'Berjalan'],
 ['Survei topografi LRT Koridor Timur','Lelang terbatas','Evaluasi teknis','Andi Pratama',D(9),'Berjalan'],
 ['Sewa tower crane Tower B','Penunjukan langsung','Negosiasi harga','Andi Pratama',D(4),'Berjalan'],
-['Pasokan pipa HDPE Bendungan','Lelang terbuka','Penetapan pemenang','Rina Kartika',D(-2),'Terlambat']]},
+['Pasokan pipa HDPE Bendungan','Lelang terbuka','Penetapan pemenang','Arif Haidar N S',D(-2),'Terlambat']]},
 'Katalog Harga Satuan':{c:['Kode','Item','Satuan','Harga satuan','Rekanan','Berlaku s.d.'],r:[
 ['KHS-BTN-001','Ready mix K-350 (slump 12±2)','m³',M(1265000),'PT Beton Prima Nusantara',D(120)],
 ['KHS-BSI-014','Besi beton ulir D25 BJTS 420','kg',M(13850),'PT Baja Konstruksi Mandiri',D(45)],
@@ -433,7 +436,25 @@ const TR={m:['Jun','Jul','Agu','Sep','Okt','Nov*'],a:[18.4,22.1,19.7,26.3,24.8,3
 const DIVP=[['Divisi Infrastruktur 1',92,146.0,38],['Divisi Infrastruktur 2',84,98.5,27],['Divisi Gedung',88,63.2,19],['Divisi EPC',79,211.7,14]];
 
 /* ---------- data builders ---------- */
-let V=[],I=[];
+const greet=()=>{const h=new Date().getHours();return h>=4&&h<11?'Selamat pagi':h>=11&&h<15?'Selamat siang':h>=15&&h<18?'Selamat sore':'Selamat malam'};
+setInterval(()=>{const e=$('#sal');if(e)e.textContent=greet()+', '+USER.nama+'.'},30000);
+let V=[],I=[],TN=[];
+/* ---------- pemenang lelang & approval stakeholder ---------- */
+const STK=[['Panitia Pengadaan','PNT','Andi Pratama','Ketua Panitia Pengadaan'],['Tim Teknis','TKN','Siti Rahmawati, S.T.','Manajer Operasi Divisi'],['Tim K3/QHSSE','K3','Hendra Wijaya','QHSSE Officer'],['Tim Legal','LGL','Maya Sari, S.H.','Legal Officer'],['Tim Keuangan','KEU','Dewi Lestari','Analis Keuangan'],['VPO Divisi','VPO','Arif Haidar N S','VPO Divisi Infrastruktur 1'],['SVP Divisi','SVP','Dr. Ir. Agus Salim, M.T.','SVP Divisi']];
+const STKOK=['Penawaran responsif dan memenuhi persyaratan administrasi.','Spesifikasi dan metode kerja sesuai dokumen lelang.','SMK3/CQSMS memenuhi ambang batas.','Dokumen legalitas lengkap dan berlaku.','Harga wajar, tidak melebihi HPS, kemampuan keuangan memadai.','Disetujui untuk diteruskan ke SVP.','Ditetapkan sebagai pemenang lelang.'];
+const TR0=[
+['LL-2026-097','Bekisting sistem Tower B','Lelang terbuka',18,3120000000,3400000000,[-27,-26,-26,-25,-24,-23,-22],null],
+['LL-2026-084','Pasokan semen PCC kuartal IV','Lelang terbuka',13,2196000000,2310000000,[-19,-18,-18,-17,-16,-15,-14],null],
+['LL-2026-088','Pondasi bored pile Jembatan Sungai Kahayan II','Lelang terbuka',4,7900000000,8400000000,[-5,-4,-4,-3,-2,null,null],null],
+['LL-2026-109','Survei topografi LRT Koridor Timur','Lelang terbatas',7,1180000000,1250000000,[-6,-5,-5,-4,null,null,null],null],
+['LL-2026-102','Pasokan pipa HDPE Bendungan','Lelang terbuka',10,4870000000,5100000000,[-9,-8,-8,-7,null,null,null],{3:'Sertifikat dan data legalitas rekanan lebih dari 18 bulan belum diperbarui (status Pengkinian Data Lama). Lengkapi lalu ajukan ulang.'}],
+['LL-2026-091','Sewa tower crane Tower B','Penunjukan langsung',5,1650000000,1700000000,[-12,-11,-10,null,null,null,null],{2:'Skor CQSMS 70, di bawah ambang 75, dan ada temuan NCR berulang pada perawatan alat.'}]];
+function mkT(r){const [k,p,m,vi,n,hps,a,rj]=r;return{k,p,m,vi,n,hps,a:a.map((d,i)=>d==null?null:{d:addD(d,9+i,(i*13)%60),bad:!!(rj&&rj[i]),note:rj&&rj[i]?rj[i]:STKOK[i]})}}
+function tState(t){let blk=false,nx=false;return t.a.map(x=>{if(x&&x.bad){blk=true;return'bad'}if(x)return'ok';if(blk)return'hold';if(!nx){nx=true;return'wait'}return'queue'})}
+function tSum(t){const st=tState(t),nOk=st.filter(x=>x==='ok').length,b=st.indexOf('bad'),w=st.indexOf('wait');
+ if(b>=0)return{st,nOk,kind:'bad',txt:'Tidak disetujui: '+STK[b][0],c:'bad'};
+ if(w<0)return{st,nOk,kind:'ok',txt:'Disetujui semua stakeholder',c:'ok'};
+ return{st,nOk,kind:'wait',txt:`Menunggu ${STK[w][0]} (${nOk}/7)`,c:'warn',w}}
 const score=v=>v.ot==null?null:Math.round(Math.max(0,Math.min(100,.35*v.ot+.35*v.ku+.3*v.k3-v.ncr*1.5)));
 const grade=s=>s==null?['Belum dinilai','mute']:s>=85?['Sangat Baik','ok']:s>=75?['Baik','steel']:s>=60?['Cukup','warn']:['Perlu Pembinaan','bad'];
 function mkV(r,i){
@@ -461,13 +482,13 @@ function mkI(r){
   h.push({t:at(d,11),n:ven.kontak,j:'Perwakilan '+ven.nama,s:'Diajukan ulang',tahap:'Revisi',note:'BA opname telah direvisi dan ditandatangani ulang.'})}
  for(let s=1;s<Math.min(stage,6);s++){d+=2;h.push({t:at(d,10+s),n:APR[s-1][0],j:APR[s-1][1],s:'Disetujui',tahap:STG[s],note:AOK[s-1]})}
  return inv}
-function init(){V=VR.map(mkV);I=IR.map(mkI)}
+function init(){V=VR.map(mkV);I=IR.map(mkI);TN=TR0.map(mkT)}
 init();
 
 /* ---------- state ---------- */
 const S={mod:-1,sub:null,col:false,mob:false,open:{0:true,4:true,8:true},cat:'Semua Modul',q:'',nOpen:false,
  vPill:'Semua Data',vf:{},vfOpen:false,vSel:new Set(),iStage:0,iq:{kw:'',div:'',proj:''},iDone:false,iSel:new Set(),
- drw:null,vTab:0,mdl:null,chatOpen:false,chat:[],note:'',pf:'all',pv:null,pj:'Semua',rb:'Semua',pre:'Seimbang',cmp:[0,4,6]};
+ drw:null,vTab:0,mdl:null,chatOpen:false,chat:[],note:'',wf:'Semua',pf:'all',pv:null,pj:'Semua',rb:'Semua',pre:'Seimbang',cmp:[0,4,6]};
 
 /* ---------- derived ---------- */
 const actI=()=>I.filter(x=>x.stage<=5);
@@ -480,6 +501,7 @@ function notifs(){
  actI().filter(x=>x.stage===4&&x.hari<=3).forEach(x=>L.push({c:'var(--acc)',t:`${x.no} menunggu persetujuan VP/SVP`,s:`${rpS(x.nilai)} · ${x.proj}`,a:'oInv',v:x.no}));
  V.filter(v=>v.tahap==='Calon Rekanan'||v.tahap==='Calon Perorangan').forEach(v=>{const n=v.verif.filter(Boolean).length;if(n<4)L.push({c:'var(--steel)',t:`Verifikasi calon rekanan ${n}/4`,s:v.nama,a:'oVen',v:v.i})});
  k3Rows().filter(r=>r.st!=='Valid').forEach(r=>L.push({c:'var(--warn)',t:`Sertifikat K3 ${r.st.toLowerCase()}`,s:`${r.v.nama} · ${fD(r.exp)}`,a:'oVen',v:r.v.i}));
+ TN.forEach((t,i)=>{const u=tSum(t);if(u.kind==='wait'&&u.w===5)L.push({c:'var(--acc)',t:`Pemenang ${t.k} menunggu persetujuan VPO`,s:`${t.p} · ${V[t.vi].nama}`,a:'wopen',v:String(i)})});
  return L}
 
 /* ---------- sidebar & header ---------- */
@@ -530,12 +552,12 @@ function heroArt(){return `<svg viewBox="0 0 420 190" aria-hidden="true">
 <rect x="346" y="6" width="24" height="12" rx="2" fill="#e8590c"/>
 </svg>`}
 function home(){
- const h=new Date().getHours(),sal=h<11?'Selamat pagi':h<15?'Selamat siang':h<18?'Selamat sore':'Selamat malam';
+ const sal=greet();
  const act=actI(),aktif=V.filter(v=>FINAL.includes(v.tahap)).length,lel=GEN['Info Lelang'].r.filter(r=>r[5]!=='Selesai').length,ktr=GEN['Daftar Kontrak Aktif'].r.length;
  const K=[['Rekanan Aktif',aktif,`${V.length} rekanan terdaftar`,'0|Rekanan Terseleksi'],['Invoice Pending',act.length,`${rpS(act.reduce((a,x)=>a+x.nilai,0))} · ${act.filter(x=>x.hari>3).length} overdue`,'4|Monitoring Status Tagihan'],['Lelang Aktif',lel,'2 paket masih pendaftaran','5|Info Lelang'],['Kontrak Aktif',ktr,'1 kontrak perlu adendum','3|Daftar Kontrak Aktif'],['Vendor Direkomendasikan AI',V.filter(v=>rec(v)[1]==='ok').length,`dari ${V.filter(v=>v.ot!=null).length} rekanan dinilai`,'8|Ranking & Rekomendasi Vendor']];
  const mods=MENU.map((m,i)=>({m,i})).filter(({m})=>!m.hide&&(S.cat==='Semua Modul'||m.cat===S.cat)).sort((a,b)=>[8,0,5,4,3,2,1,7].indexOf(a.i)-[8,0,5,4,3,2,1,7].indexOf(b.i));
  return `<section class="hero"><div><small style="color:#aeb8bd">${new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</small>
- <h1>${sal}, ${USER.nama.split(' ')[0]}.</h1><p>${act.length} tagihan dan ${notifs().length} tugas menunggu tindakan hari ini. Tekan <kbd>/</kbd> untuk mencari invoice, BAP, NPWP atau rekanan.</p>
+ <h1 id="sal">${sal}, ${USER.nama}.</h1><p>${act.length} tagihan dan ${notifs().length} tugas menunggu tindakan hari ini. Tekan <kbd>/</kbd> untuk mencari invoice, BAP, NPWP atau rekanan.</p>
  <div class="meta"><span>Hub for Artificial Intelligence, Digital Acquisition & Resource Management</span><span>${USER.jabatan}</span><span>${USER.tim}</span><span>${USER.divisi}</span></div></div>${heroArt()}</section>
  <div class="kpis" style="margin-top:16px">${K.map(k=>`<button class="card kpi" data-a="go" data-v="${k[3]}"><span class="k">${k[0]}</span><span class="v">${k[1]}</span><small>${k[2]}</small></button>`).join('')}</div>
  <section style="margin-top:26px"><div class="ph" style="margin-bottom:12px"><div><h2>Direktori modul</h2><p>Klik sub-fitur untuk langsung membuka halamannya.</p></div></div>
@@ -652,6 +674,7 @@ function iTable(){
 function cell(c,h){if(c&&c.d!==undefined)return `<td class="nw">${fD(addD(c.d))}</td>`;if(c&&c.m!==undefined)return `<td class="num">${rp(c.m)}</td>`;if(h==='Status')return `<td>${stTag(c)}</td>`;return `<td>${esc(c)}</td>`}
 function genView(){
  const m=MENU[S.mod],sub=S.sub||m.subs[0];
+ if(sub==='Pemenang Lelang & Approval')return winView();
  const g=sub==='Sertifikasi K3/CQSMS'?{c:['Rekanan','Dokumen','Skor CQSMS','Kedaluwarsa','Sisa waktu','Status'],r:k3Rows().map(r=>[r.v.nama,'SMK3 / CQSMS – '+r.v.id,String(r.v.k3),D(r.v.k3e),r.v.k3e<0?`Lewat ${-r.v.k3e} hari`:`${r.v.k3e} hari`,r.st]),link:k3Rows().map(r=>r.v.i)}:GEN[sub];
  const ban=m.st==='Freeze'?`<div class="banner" style="background:var(--warns);color:var(--warn)"><b>Modul berstatus Freeze.</b> Data hanya dapat dibaca; transaksi baru ditahan sementara.</div>`:(m.st==='Non-Aktif'||/^(Katalog Harga|Rencana Umum)/.test(sub))?`<div class="banner" style="background:var(--sub);border:1px solid var(--line)"><b>Modul Non-Aktif untuk divisi Anda.</b> Data di bawah adalah pratinjau.</div>`:'';
  return `<div class="ph"><div><h1>${esc(m.t)}</h1><p>${esc(m.d)}</p></div>${stTag(m.st)}</div>${ban}
@@ -711,6 +734,7 @@ function rowsFor(kind){
 const csvq=c=>/[",\n]/.test(c)?'"'+c.replace(/"/g,'""')+'"':c;
 function modalHTML(m){
  const head=(t,s)=>`<div class="dh"><div><small>${s}</small><h2>${esc(t)}</h2></div><button class="iconbtn" data-a="mclose" aria-label="Tutup">${ic('x')}</button></div>`;
+ if(m.type==='win')return winModal(m);
  if(m.type==='doc')return head(m.title,'Pratinjau dokumen')+`<div class="db"><div class="paper"><h3>${esc(m.title.toUpperCase())}</h3><div class="c">Nomor: ${esc(m.no)}</div><table><tbody>${m.lines.map(l=>`<tr><td>${esc(l[0])}</td><td>: ${esc(l[1])}</td></tr>`).join('')}</tbody></table><div class="stamp"><span>Pihak Pertama<br><br><br><b>${esc(m.a)}</b></span><span>Pihak Kedua<br><br><br><b>${esc(m.b)}</b></span></div></div><p class="note">Pratinjau tiruan untuk demo; versi produksi menampilkan berkas PDF asli.</p></div>`;
  if(m.type==='exp'){const R=rowsFor(m.kind),n=R.length-1,lab={csv:'CSV',xls:'Excel',pdf:'PDF'}[m.fmt];
   if(m.fmt==='pdf')return head('Laporan '+(m.kind[0]==='v'?'data rekanan':'status tagihan'),'Export PDF · '+n+' baris')+`<div class="db"><div class="paper" style="overflow-x:auto"><h3>HAIDAR AI · ${m.kind[0]==='v'?'Laporan Data Rekanan':'Laporan Status Tagihan'}</h3><div class="c">Dicetak ${fDT(new Date())} oleh ${USER.nama}</div><table style="font-size:12.5px"><thead><tr>${R[0].map(h=>`<th style="background:#f0f1ee;color:#333">${esc(h)}</th>`).join('')}</tr></thead><tbody>${R.slice(1).map(r=>`<tr>${r.map(c=>`<td style="border-bottom:1px solid #e3e3e3;padding:4px 6px">${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note">Unduhan dan cetak PDF langsung aktif setelah aplikasi di-deploy; di pratinjau ini laporan ditampilkan sebagai halaman.</p></div>`;
@@ -729,10 +753,32 @@ function modalHTML(m){
  <label class="f">Proyek<select name="proj">${Object.keys(PROJ).map(p=>`<option>${p}</option>`).join('')}</select></label><label class="f">Nilai tagihan (Rp) *<input name="nilai" required inputmode="numeric" placeholder="1500000000"></label></div>
  <div class="row" style="justify-content:flex-end"><button type="button" class="btn" data-a="mclose">Batal</button><button class="btn pri" type="submit">Post Invoice</button></div></form>`}
  return ''}
+
+
+/* ---------- halaman pemenang lelang ---------- */
+const WF=['Semua','Disetujui semua','Sedang proses','Tidak disetujui'];
+function winView(){
+ const m=MENU[S.mod],L=TN.map((t,i)=>({t,i,u:tSum(t)})),cnt=k=>L.filter(x=>k==='Semua'||(k==='Disetujui semua'&&x.u.kind==='ok')||(k==='Sedang proses'&&x.u.kind==='wait')||(k==='Tidak disetujui'&&x.u.kind==='bad')).length;
+ const F=L.filter(x=>S.wf==='Semua'||(S.wf==='Disetujui semua'&&x.u.kind==='ok')||(S.wf==='Sedang proses'&&x.u.kind==='wait')||(S.wf==='Tidak disetujui'&&x.u.kind==='bad'));
+ return `<div class="ph"><div><h1>${esc(m.t)}</h1><p>Cek pemenang lelang dan status persetujuan dari ${STK.length} stakeholder.</p></div>${stTag(m.st)}</div>
+ <div class="tabs" style="margin-bottom:14px">${m.subs.map(x=>`<button class="chip ${x==='Pemenang Lelang & Approval'?'on':''}" data-a="go" data-v="${S.mod}|${x}">${x}${x==='Sertifikasi K3/CQSMS'?` <b>${k3Badge()}</b>`:''}</button>`).join('')}</div>
+ <div class="kpis" style="margin-bottom:14px">${[['Paket dengan pemenang',L.length,'ditetapkan panitia'],['Disetujui semua',cnt('Disetujui semua'),'siap terbit surat penetapan'],['Sedang proses',cnt('Sedang proses'),'menunggu stakeholder'],['Tidak disetujui',cnt('Tidak disetujui'),'perlu tindak lanjut']].map(k=>`<div class="card kpi static"><span class="k">${k[0]}</span><span class="v">${k[1]}</span><small>${k[2]}</small></div>`).join('')}</div>
+ <div class="row" style="margin-bottom:12px">${WF.map(f=>`<button class="pill ${S.wf===f?'on':''}" data-a="wf" data-v="${f}">${f} <b style="margin-left:4px">${cnt(f)}</b></button>`).join('')}</div>
+ <div class="tw">${F.length?`<table><thead><tr><th>Kode</th><th>Paket pekerjaan</th><th>Pemenang</th><th class="num">Nilai penawaran</th><th>Persetujuan stakeholder</th><th>Status</th></tr></thead><tbody>${F.map(({t,i,u})=>{const v=V[t.vi];return `<tr class="click" data-a="win" data-v="${i}"><td class="nw"><b>${t.k}</b></td><td style="min-width:200px"><b>${esc(t.p)}</b><div class="muted">${t.m}</div></td><td style="min-width:200px">${esc(v.nama)}<div class="muted">${jenisV(v)} · ${esc(v.bidang)}</div></td><td class="num">${rpS(t.n)}<div class="muted">${(t.n/t.hps*100).toFixed(1).replace('.',',')}% dari HPS</div></td><td><span class="vd">${STK.map((x,j)=>`<i class="${u.st[j]==='ok'?'y':u.st[j]==='bad'?'n':u.st[j]==='wait'?'w':''}" title="${x[0]}: ${({ok:'disetujui',bad:'tidak disetujui',wait:'menunggu',queue:'belum giliran',hold:'ditahan'})[u.st[j]]}">${x[1]}</i>`).join('')}</span><div class="muted" style="margin-top:4px">${u.nOk}/7 menyetujui</div></td><td>${tag(u.txt,u.c)}</td></tr>`}).join('')}</tbody></table>`:empty('Tidak ada paket pada filter ini','',' Pilih filter lain.')}</div>
+ <p class="note">Klik baris untuk melihat stakeholder, jabatan, tanggal approve dan alasan jika tidak disetujui. Data contoh untuk demo.</p>`}
+function winModal(m){
+ const t=TN[m.i],u=tSum(t),v=V[t.vi],sc=aiSc(v),rc=rec(v),w=u.st.indexOf('wait'),sl={ok:['Disetujui','ok'],bad:['Tidak disetujui','bad'],wait:['Menunggu','warn'],queue:['Belum giliran','mute'],hold:['Ditahan','mute']};
+ return `<div class="dh"><div><small>Pemenang lelang · ${t.k}</small><h2>${esc(t.p)}</h2><div class="row" style="margin-top:8px;gap:6px">${tag(u.txt,u.c)}${tag(t.m,'mute')}</div></div><button class="iconbtn" data-a="mclose" aria-label="Tutup">${ic('x')}</button></div>
+ <div class="db"><section class="card"><dl class="kv" style="margin:0">${[['Pemenang',v.nama],['Jenis / bidang',jenisV(v)+' · '+v.bidang],['Nilai penawaran',rp(t.n)],['HPS',rp(t.hps)+' ('+(t.n/t.hps*100).toFixed(1).replace('.',',')+'%)'],['ID Vendor',v.id],['Skor AI (50 kriteria)',sc==null?'Belum dinilai':Math.round(sc)+' · '+rc[0]]].map(r=>`<div><dt>${r[0]}</dt><dd>${esc(r[1])}</dd></div>`).join('')}</dl></section>
+ <section><h3 style="margin-bottom:10px">Persetujuan ${STK.length} stakeholder</h3><div class="tw"><table><thead><tr><th>No</th><th>Stakeholder</th><th>Pejabat & jabatan</th><th>Tanggal approve</th><th>Status</th><th>Alasan tidak disetujui</th></tr></thead><tbody>
+ ${STK.map((x,j)=>{const a=t.a[j],s=u.st[j];return `<tr><td>${j+1}</td><td class="nw"><b>${x[0]}</b></td><td style="min-width:180px">${esc(x[2])}<div class="muted">${esc(x[3])}</div></td><td class="nw">${a?fDT(a.d):'<span class="muted">–</span>'}</td><td>${tag(sl[s][0],sl[s][1])}</td><td style="min-width:240px">${s==='bad'?`<span style="color:var(--bad);font-weight:600">${esc(a.note)}</span>`:s==='ok'?`<span class="muted">Catatan: ${esc(a.note)}</span>`:'<span class="muted">–</span>'}</td></tr>`}).join('')}</tbody></table></div></section>
+ ${u.kind==='ok'?`<div class="banner" style="background:var(--oks);color:var(--ok)"><b>Seluruh stakeholder telah menyetujui.</b> Pemenang lelang siap ditetapkan.</div>`:u.kind==='bad'?`<section class="vbox"><b>Penetapan tertahan.</b><p class="muted" style="margin:0">Perbaiki hal yang disebutkan, lalu buka kembali agar stakeholder tersebut meninjau ulang.</p><div class="row"><button class="btn pri" data-a="wre" data-v="${m.i}">Buka kembali penolakan</button></div></section>`:`<section class="vbox"><b>Tahap berikutnya: ${STK[w][0]} (${STK[w][2]})</b><label class="f">Catatan atau alasan<textarea class="inp" id="wnote" placeholder="Wajib diisi jika tidak disetujui"></textarea></label><div class="err" id="werr"></div><div class="row"><button class="btn ok" data-a="wok" data-v="${m.i}">${ic('check',16)}Setujui atas nama ${STK[w][1]}</button><button class="btn badb" data-a="wno" data-v="${m.i}">Tidak setujui</button><small>Mode demo: Anda mewakili stakeholder pada tahap ini.</small></div></section>`}
+ </div>`}
+
 function docModal(title,no,lines,a,b){S.mdl={type:'doc',title,no,lines,a,b};renderModal()}
 
 /* ---------- chat ---------- */
-const CHIPS=['Vendor paling hijau (GSCM)','Ranking vendor versi AI Decision','Cek status invoice BAP-001','Tagihan mana saja yang overdue?','Rekomendasi vendor pekerjaan beton','Dokumen vendor yang hampir kedaluwarsa','SOP approval tagihan','SOP registrasi rekanan'];
+const CHIPS=['Status approval pemenang lelang','Vendor paling hijau (GSCM)','Ranking vendor versi AI Decision','Cek status invoice BAP-001','Tagihan mana saja yang overdue?','Rekomendasi vendor pekerjaan beton','Dokumen vendor yang hampir kedaluwarsa','SOP approval tagihan','SOP registrasi rekanan'];
 const BID=[['beton','Pekerjaan Beton'],['semen','Pekerjaan Beton'],['baja','Struktur Baja'],['jembatan','Struktur Baja'],['aspal','Pekerjaan Jalan & Aspal'],['jalan','Pekerjaan Jalan & Aspal'],['mekanikal','Mekanikal Elektrikal'],['elektrikal','Mekanikal Elektrikal'],['listrik','Mekanikal Elektrikal'],['alat berat','Penyewaan Alat Berat'],['excavator','Penyewaan Alat Berat'],['pondasi','Geoteknik & Pondasi'],['fondasi','Geoteknik & Pondasi'],['bored','Geoteknik & Pondasi'],['precast','Precast'],['girder','Precast'],['pompa','Pompa & Hidrolik'],['logistik','Logistik & Transportasi'],['angkut','Logistik & Transportasi'],['kayu','Material Kayu'],['survei','Jasa Survei & Pemetaan'],['perancah','Perancah & Bekisting'],['scaffold','Perancah & Bekisting'],['bekisting','Perancah & Bekisting']];
 function bot(q){
  const s=q.toLowerCase(),m=s.match(/bap[\s-]*(\d{1,3})/);
@@ -741,6 +787,7 @@ function bot(q){
   return `<b>${no}</b> · ${esc(V[x.vi].nama)}<br>${esc(x.pek)}<br>Nilai: <b>${rp(x.nilai)}</b><br>Posisi: <b>${x.stage>5?'Selesai – siap bayar':STG[x.stage]+' ('+STGP[x.stage]+')'}</b>${x.stage<=5?`<br>SLA: ${st}, ${x.hari} hari di tahap ini`:''}<br>Aksi terakhir: ${esc(last.s)} oleh ${esc(last.n)}, ${fDT(last.t)}.<br><button class="btn sm" data-a="oInv" data-v="${no}">Buka detail tagihan</button>`}
  if(/overdue|terlambat|lewat|jatuh tempo/.test(s)){const L=actI().filter(x=>x.hari>3).sort((a,b)=>b.hari-a.hari),W=actI().filter(x=>x.hari>=2&&x.hari<=3);
   return L.length?`Ada <b>${L.length} tagihan overdue</b> (lebih dari 3 hari di satu tahap):<ul>${L.map(x=>`<li><b>${x.no}</b> · ${x.hari} hari di ${STG[x.stage]} · ${rpS(x.nilai)}</li>`).join('')}</ul>${W.length?`${W.length} tagihan lain mendekati jatuh tempo.<br>`:''}<button class="btn sm" data-a="go" data-v="4|Monitoring Status Tagihan">Buka antrean tagihan</button>`:'Tidak ada tagihan overdue saat ini.'}
+ if(/pemenang|menang|approval lelang|penetapan/.test(s)){const L=TN.map(t=>({t,u:tSum(t)}));return `Ada <b>${L.length} paket</b> dengan pemenang lelang:<ul>${L.map(x=>`<li><b>${x.t.k}</b> · ${esc(V[x.t.vi].nama)} · ${x.u.txt}</li>`).join('')}</ul><button class="btn sm" data-a="go" data-v="5|Pemenang Lelang & Approval">Buka detail stakeholder</button>`}
  if(/hijau|gscm|ramah lingkungan|karbon/.test(s)){const L=V.filter(v=>v.ot!=null).sort((a,b)=>green(b)-green(a)).slice(0,3);return `Rekanan dengan <b>Indeks Hijau (GSCM)</b> tertinggi:<ul>${L.map((v,k)=>`<li><b>${k+1}. ${esc(v.nama)}</b> · indeks ${Math.round(green(v))} (${gtier(green(v))[0]}) · ${jenisV(v)}</li>`).join('')}</ul><button class="btn sm" data-a="go" data-v="8|Indeks Hijau (GSCM)">Buka Indeks Hijau</button>`}
  if(/ranking|peringkat|skor ai|50 kriteria|ai decision/.test(s)){const L=V.filter(v=>v.ot!=null).sort((a,b)=>aiSc(b)-aiSc(a)).slice(0,3);return `Peringkat teratas menurut <b>AI DECISION</b> (50 kriteria, bobot ${S.pre}):<ul>${L.map((v,k)=>`<li><b>${k+1}. ${esc(v.nama)}</b> · skor ${Math.round(aiSc(v))} · ${rec(v)[0]}</li>`).join('')}</ul><button class="btn sm" data-a="go" data-v="8|Ranking & Rekomendasi Vendor">Buka ranking lengkap</button>`}
  if(/rekomend|terbaik|bandingk|komparasi|vendor untuk|rekanan untuk/.test(s)){const b=BID.find(k=>s.includes(k[0]));
@@ -980,7 +1027,7 @@ function renderDrawer(){
  const keep=$('#drw .drawer')?.scrollTop||0;
  $('#drw').innerHTML=`<div class="ovl" data-a="close"></div><aside class="drawer" role="dialog" aria-modal="true">${html}</aside>`;
  if(d.keep)$('#drw .drawer').scrollTop=keep;d.keep=false}
-function renderModal(){$('#mdl').innerHTML=S.mdl?`<div class="ovl m" data-a="mclose"></div><div class="modal" role="dialog" aria-modal="true">${modalHTML(S.mdl)}</div>`:''}
+function renderModal(){$('#mdl').innerHTML=S.mdl?`<div class="ovl m" data-a="mclose"></div><div class="modal${S.mdl.type==='win'?' wide':''}" role="dialog" aria-modal="true">${modalHTML(S.mdl)}</div>`:''}
 function renderChat(){$('#chat').innerHTML=S.chatOpen?chatHTML():'';const m=$('#msgs');if(m)m.scrollTop=m.scrollHeight}
 function refreshInv(){const e=$('#itbl');if(e)e.innerHTML=iTable()}
 
@@ -1026,6 +1073,11 @@ const A={
  imp:()=>{S.mdl={type:'imp'};renderModal()},addV:()=>{S.mdl={type:'addV'};renderModal()},post:()=>{S.mdl={type:'post'};renderModal()},
  chat:()=>{S.chatOpen=!S.chatOpen;if(S.chatOpen&&!S.chat.length)S.chat.push({f:'bot',h:`Halo ${USER.nama.split(' ')[0]}, saya Asisten HAIDAR AI. ${bot('')}`});renderChat();if(S.chatOpen)$('#cq')?.focus()},
  ask:v=>ask(v),
+ wf:v=>{S.wf=v;render()},win:v=>{S.mdl={type:'win',i:+v};renderModal()},
+ wopen:v=>{go(5,'Pemenang Lelang & Approval');S.mdl={type:'win',i:+v};renderModal()},
+ wok:v=>{const t=TN[+v],w=tState(t).indexOf('wait');if(w<0)return;t.a[w]={d:new Date(),bad:false,note:($('#wnote').value.trim()||STKOK[w])};toast(`${STK[w][0]} menyetujui ${t.k}`);renderModal();render()},
+ wno:v=>{const t=TN[+v],w=tState(t).indexOf('wait'),n=$('#wnote').value.trim();if(w<0)return;if(!n){$('#werr').textContent='Alasan wajib diisi sebelum menyatakan tidak setuju.';$('#wnote').focus();return}t.a[w]={d:new Date(),bad:true,note:n};toast(`${t.k} tidak disetujui oleh ${STK[w][0]}`);renderModal();render()},
+ wre:v=>{const t=TN[+v],b=tState(t).indexOf('bad');if(b<0)return;t.a[b]=null;toast(`Penolakan ${STK[b][0]} dibuka kembali`);renderModal();render()},
  pf:v=>{S.pf=v;keepR()},pj:v=>{S.pj=v;render()},pre:v=>{W=[...PRE[v]];S.pre=v;render()},
  aiPerf:v=>{S.pv=+v;S.pf='all';go(8,'Performa 50 Kriteria')},
  rexp:()=>dl('ranking-vendor-haidar.csv',[['Peringkat','Rekanan','Jenis','Bidang','Skor AI','Indeks Hijau','Rekomendasi',...CATG],...ranked().map((x,k)=>[k+1,x.v.nama,jenisV(x.v),x.v.bidang,Math.round(x.s),Math.round(x.g),rec(x.v)[0],...catSc(x.v).map(Math.round)])]),
