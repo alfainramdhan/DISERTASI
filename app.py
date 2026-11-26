@@ -11,7 +11,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="HAIDAR AI | Hub for AI, Digital Acquisition & Resource Management",
-    page_icon="🏗️",
+    page_icon=str(Path(__file__).parent / "logo.png"),
     layout="wide",
     initial_sidebar_state="collapsed",
 )

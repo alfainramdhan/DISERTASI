@@ -22,6 +22,7 @@ Tampilan dan fitur sama dengan prototipe artifact; Streamlit dipakai sebagai wad
 ## Isi project
 ```
 app.py              pembungkus Streamlit
+logo.png            logo HAIDAR AI
 haidar.html         seluruh antarmuka dan data contoh
 requirements.txt    hanya streamlit
 .streamlit/config.toml
