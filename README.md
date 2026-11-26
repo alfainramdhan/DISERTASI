@@ -4,16 +4,20 @@
 Portal Supply Chain & Vendor dengan menu AI DECISION (50 kriteria, termasuk Green Supply Chain Management).
 Tampilan dan fitur sama dengan prototipe artifact; Streamlit dipakai sebagai wadah untuk deploy.
 
-## Menu sidebar (akrostik H-A-I-D-A-R)
+## Menu sidebar (akrostik H-A-I-D-A-R, AI DECISION di bawah)
 | Huruf | Menu | Isi |
 |---|---|---|
-| AI | AI DECISION (BARU) | Ringkasan, ranking, performa 50 kriteria, bandingkan, indeks hijau, bobot, risiko, model |
-| H | Hub & Vendor Management | Verifikasi 4 stakeholder, Profil 360, scorecard performa, sinkronisasi SAP |
-| A | Acquisition & E-Procurement | Info lelang, proses pengadaan, **Pemenang Lelang & Approval** (7 stakeholder, jabatan, tanggal approve, alasan tidak disetujui), sertifikasi K3/CQSMS |
+| H | Hub & Vendor Management | Verifikasi 4 stakeholder (dibatasi sesuai peran), Profil 360, scorecard performa 50 kriteria, sinkronisasi SAP |
+| A | Acquisition & E-Procurement | Info lelang, proses pengadaan, **Pemenang Lelang & Approval** (persetujuan berjenjang, Ketua Panitia terakhir), sertifikasi K3/CQSMS |
 | I | Invoice & Payment System | Pipeline approval 6 tahap, SLA aging, riwayat approver |
 | D | Digital & Smart Contract | Kontrak aktif, masa berlaku dan adendum |
 | A | Asset & Operational Logistics | Pengiriman dan penerimaan material |
 | R | Requisition, Purchasing & Catalog | SPB, PO, Katalog Harga Satuan, RUP |
+| AI | AI DECISION | Dashboard (ringkasan, ranking, performa 50 kriteria, indeks hijau, bobot, model), Bandingkan Vendor, Peringatan Risiko, **AI Chatbot** penentu vendor |
+
+- 50 kriteria + laporan keuangan 3 tahun per rekanan, bisa diunduh sebagai **PDF** (per rekanan dan ranking).
+- Menu kiri tertutup saat pertama dibuka dan mengecil otomatis saat klik di luar menu; arahkan kursor ke menu untuk membukanya.
+- Peran demo (Settings & Tutorial): persetujuan hanya bisa dilakukan stakeholder yang sesuai.
 
 ## Isi project
 ```
