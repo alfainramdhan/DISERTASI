@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HAIDAR SMART Portal</title>
+<title>HAIDAR AI Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -279,7 +279,7 @@ details summary{font-weight:700}
 <div id="drw"></div>
 <div id="mdl"></div>
 <div id="chat"></div>
-<button class="fab" data-a="chat" aria-label="Buka Asisten HAIDAR SMART"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/></svg></button>
+<button class="fab" data-a="chat" aria-label="Buka Asisten HAIDAR AI"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/></svg></button>
 <div id="toast" aria-live="polite"></div>
 
 <script>
@@ -309,16 +309,16 @@ const toast=t=>{const e=document.createElement('div');e.className='tst';e.textCo
 /* ---------- master ---------- */
 const USER={nama:'Rina Kartika',ini:'RK',jabatan:'Manajer Pengadaan',divisi:'Divisi Infrastruktur 1',tim:'Tim Supply Chain Management'};
 const MENU=[
-{L:'P',t:'Partner & Vendor Management',cat:'Partner & Vendor',st:'Aktif',def:'Dashboard Rekanan',d:'Registrasi, verifikasi 4 stakeholder, profil 360° dan performa rekanan.',subs:['Dashboard Rekanan','Bakal Calon Rekanan','Calon Perorangan','Calon Rekanan','Rekanan Terseleksi','Rekanan Internasional','Pengkinian Data Lama','Cek Posisi Rekanan','Semua Rekanan']},
-{L:'R',t:'Requisition & Purchasing',cat:'Requisition',st:'Aktif',d:'Permintaan pembelian proyek hingga penerbitan PO.',subs:['Permintaan Pembelian / SPB','Pesanan Pembelian / PO']},
-{L:'O',t:'Operational Logistics',cat:'Logistics',st:'Aktif',d:'Pelacakan pengiriman material dan penerimaan barang di proyek.',subs:['Pemantauan Pengiriman Material','Penerimaan Barang Proyek']},
-{L:'S',t:'Smart Contract',cat:'Contract',st:'Freeze',d:'Daftar kontrak aktif, masa berlaku dan adendum.',subs:['Daftar Kontrak Aktif','Monitoring Masa Berlaku & Adendum']},
-{L:'P',t:'Payment & Invoice System',cat:'Payment & Invoice',st:'Aktif',def:'Monitoring Status Tagihan',d:'Penagihan rekanan dengan approval berjenjang 5 tahap.',subs:['Tagihan Proyek','Tagihan Operasional/Kantor Pusat','Post Invoice','Monitoring Status Tagihan']},
-{L:'E',t:'E-Procurement',cat:'E-Procurement',st:'Aktif',d:'Informasi lelang, proses pengadaan dan sertifikasi K3/CQSMS.',subs:['Info Lelang','Proses Pengadaan','Sertifikasi K3/CQSMS']},
-{L:'K',t:'Katalog & RUP',cat:'Katalog',st:'Non-Aktif',d:'Katalog harga satuan dan rencana umum pengadaan.',subs:['Katalog Harga Satuan','Rencana Umum Pengadaan']},
+{L:'H',t:'Hub & Vendor Management',cat:'Hub & Vendor',st:'Aktif',def:'Dashboard Rekanan',d:'Registrasi, verifikasi 4 stakeholder, profil 360° dan performa rekanan.',subs:['Dashboard Rekanan','Bakal Calon Rekanan','Calon Perorangan','Calon Rekanan','Rekanan Terseleksi','Rekanan Internasional','Pengkinian Data Lama','Cek Posisi Rekanan','Semua Rekanan']},
+{L:'R',t:'Requisition, Purchasing & Catalog',cat:'Requisition & Catalog',st:'Aktif',d:'Permintaan pembelian, penerbitan PO, katalog harga satuan dan rencana umum pengadaan.',subs:['Permintaan Pembelian / SPB','Pesanan Pembelian / PO','Katalog Harga Satuan','Rencana Umum Pengadaan']},
+{L:'A',t:'Asset & Operational Logistics',cat:'Asset & Logistics',st:'Aktif',d:'Pelacakan pengiriman material dan penerimaan barang di proyek.',subs:['Pemantauan Pengiriman Material','Penerimaan Barang Proyek']},
+{L:'D',t:'Digital & Smart Contract',cat:'Digital Contract',st:'Freeze',d:'Daftar kontrak aktif, masa berlaku dan adendum.',subs:['Daftar Kontrak Aktif','Monitoring Masa Berlaku & Adendum']},
+{L:'I',t:'Invoice & Payment System',cat:'Invoice & Payment',st:'Aktif',def:'Monitoring Status Tagihan',d:'Penagihan rekanan dengan approval berjenjang 5 tahap.',subs:['Tagihan Proyek','Tagihan Operasional/Kantor Pusat','Post Invoice','Monitoring Status Tagihan']},
+{L:'A',t:'Acquisition & E-Procurement',cat:'Acquisition',st:'Aktif',d:'Informasi lelang, proses pengadaan dan sertifikasi K3/CQSMS.',subs:['Info Lelang','Proses Pengadaan','Sertifikasi K3/CQSMS']},
+{L:'K',hide:1,t:'Katalog & RUP',cat:'Katalog',st:'Non-Aktif',d:'Katalog harga satuan dan rencana umum pengadaan.',subs:['Katalog Harga Satuan','Rencana Umum Pengadaan']},
 {L:'',t:'Settings & Tutorial',cat:'Settings',st:'Aktif',d:'Profil pengguna, panduan demo dan reset data contoh.',subs:[]},
 {L:'AI',t:'AI DECISION',cat:'AI Decision',st:'Aktif',def:'Ringkasan AI Decision',d:'Keputusan pemilihan vendor, subkon dan mandor dari 50 kriteria termasuk Green Supply Chain.',subs:['Ringkasan AI Decision','Ranking & Rekomendasi Vendor','Performa 50 Kriteria','Bandingkan Vendor','Indeks Hijau (GSCM)','Bobot & Kriteria Penilaian','Peringatan Risiko','Model & Algoritma']}];
-const CATS=['Semua Modul','AI Decision','Partner & Vendor','Payment & Invoice','Requisition','Logistics','E-Procurement'];
+const CATS=['Semua Modul','AI Decision','Hub & Vendor','Acquisition','Invoice & Payment','Digital Contract','Asset & Logistics','Requisition & Catalog'];
 const STAGES=['Bakal Calon Rekanan','Calon Perorangan','Calon Rekanan','Rekanan Terseleksi','Rekanan Internasional','Pengkinian Data Lama'];
 const FINAL=['Rekanan Terseleksi','Rekanan Internasional'];
 const TAHAPC={'Bakal Calon Rekanan':'mute','Calon Perorangan':'warn','Calon Rekanan':'warn','Rekanan Terseleksi':'ok','Rekanan Internasional':'steel','Pengkinian Data Lama':'bad'};
@@ -485,17 +485,17 @@ function notifs(){
 /* ---------- sidebar & header ---------- */
 function sideHTML(){
  const kb=k3Badge();
- return `<div class="brand"><span class="logo">H</span><span class="bt"><b>HAIDAR SMART</b><small>Supply Chain & Vendor Portal</small></span></div>
+ return `<div class="brand" title="Hub for Artificial Intelligence, Digital Acquisition & Resource Management"><span class="logo">H</span><span class="bt"><b>HAIDAR AI</b><small>Hub for AI, Digital Acquisition & Resource Management</small></span></div>
  <button class="mi ${S.mod<0?'on':''}" data-a="home" title="Beranda"><span class="lt">${ic('home',17)}</span><span class="mt">Beranda</span></button>
  <div class="navl">Modul utama</div>
- ${[8,0,1,2,3,4,5,6,7].map(i=>{const m=MENU[i],on=S.mod===i,op=S.open[i]&&!S.col;
-  const badge=m.L==='E'?`<span class="badge">${kb}</span>`:m.L==='AI'?'<span class="badge nw2">BARU</span>':'';
+ ${[8,0,5,4,3,2,1,7].map(i=>{const m=MENU[i],on=S.mod===i,op=S.open[i]&&!S.col;
+  const badge=i===5?`<span class="badge">${kb}</span>`:m.L==='AI'?'<span class="badge nw2">BARU</span>':'';
   return `<div><button class="mi ${on?'on':''}" data-a="mod" data-v="${i}" title="${esc(m.t)}" aria-expanded="${!!op}"><span class="lt${m.L==='AI'?' ai':''}">${m.L||ic('gear',17)}</span><span class="mt">${esc(m.t)}</span>${badge}${m.subs.length?`<span class="chev ${op?'o':''}">${ic('chev',15)}</span>`:''}</button>
   ${op&&m.subs.length?`<ul class="subs">${m.subs.map(s=>`<li><button class="${on&&S.sub===s?'on':''}" data-a="go" data-v="${i}|${esc(s)}"><span>${esc(s)}</span>${s==='Sertifikasi K3/CQSMS'?`<span class="badge">${kb}</span>`:''}</button></li>`).join('')}</ul>`:''}</div>`}).join('')}
  <div class="sfoot"><button class="mi colbtn" data-a="col" title="${S.col?'Perluas menu':'Perkecil menu'}"><span class="lt" style="background:transparent">${ic('side',17)}</span><span class="mt">${S.col?'Perluas menu':'Perkecil menu'}</span></button></div>`}
 function topHTML(){
  const n=notifs().length;
- const crumb=S.mod<0?'<span>HAIDAR SMART</span>/<b>Beranda</b>':`<span>HAIDAR SMART</span>/<span>${esc(MENU[S.mod].t)}</span>${S.sub?`/<b>${esc(S.sub)}</b>`:''}`;
+ const crumb=S.mod<0?'<span>HAIDAR AI</span>/<b>Beranda</b>':`<span>HAIDAR AI</span>/<span>${esc(MENU[S.mod].t)}</span>${S.sub?`/<b>${esc(S.sub)}</b>`:''}`;
  return `<button class="iconbtn mbtn" data-a="mob" aria-label="Buka menu">${ic('menu')}</button>
  <nav class="crumb" aria-label="Breadcrumb">${crumb}</nav>
  <div class="gsearch"><span class="gi">${ic('search',18)}</span><input id="gq" type="search" placeholder="Cari menu, invoice, BAP, NPWP, rekanan…" value="${esc(S.q)}" autocomplete="off" aria-label="Pencarian global"><kbd>/</kbd><div id="gres" class="pop"></div></div>
@@ -507,7 +507,7 @@ function notifHTML(){
  ${L.length?`<ul>${L.map(x=>`<li><button data-a="${x.a}" data-v="${esc(x.v)}"><span class="ndot" style="background:${x.c}"></span><span><b style="display:block;font-size:14px">${esc(x.t)}</b><small>${esc(x.s)}</small></span></button></li>`).join('')}</ul>`:`<div class="empty"><b>Tidak ada tugas</b><p>Semua antrean sudah ditangani.</p></div>`}</div>`}
 function gSearch(q){
  q=q.trim().toLowerCase();if(!q)return '';
- const mm=MENU.flatMap((m,i)=>[{t:m.t,i,s:''},...m.subs.map(s=>({t:s,i,s,p:m.t}))]).filter(x=>x.t.toLowerCase().includes(q)).slice(0,5);
+ const mm=MENU.flatMap((m,i)=>m.hide?[]:[{t:m.t,i,s:''},...m.subs.map(s=>({t:s,i,s,p:m.t}))]).filter(x=>x.t.toLowerCase().includes(q)).slice(0,5);
  const ii=I.filter(x=>[x.no,x.ktr,x.pek,x.proj,V[x.vi].nama].join(' ').toLowerCase().includes(q)).slice(0,5);
  const vv=V.filter(v=>[v.nama,v.npwp,v.id,v.sapId,v.email,v.bidang].join(' ').toLowerCase().includes(q)).slice(0,5);
  if(!mm.length&&!ii.length&&!vv.length)return `<div class="empty" style="padding:22px"><b>Tidak ada hasil</b><p>Coba nomor BAP, NPWP atau nama rekanan.</p></div>`;
@@ -533,10 +533,10 @@ function home(){
  const h=new Date().getHours(),sal=h<11?'Selamat pagi':h<15?'Selamat siang':h<18?'Selamat sore':'Selamat malam';
  const act=actI(),aktif=V.filter(v=>FINAL.includes(v.tahap)).length,lel=GEN['Info Lelang'].r.filter(r=>r[5]!=='Selesai').length,ktr=GEN['Daftar Kontrak Aktif'].r.length;
  const K=[['Rekanan Aktif',aktif,`${V.length} rekanan terdaftar`,'0|Rekanan Terseleksi'],['Invoice Pending',act.length,`${rpS(act.reduce((a,x)=>a+x.nilai,0))} · ${act.filter(x=>x.hari>3).length} overdue`,'4|Monitoring Status Tagihan'],['Lelang Aktif',lel,'2 paket masih pendaftaran','5|Info Lelang'],['Kontrak Aktif',ktr,'1 kontrak perlu adendum','3|Daftar Kontrak Aktif'],['Vendor Direkomendasikan AI',V.filter(v=>rec(v)[1]==='ok').length,`dari ${V.filter(v=>v.ot!=null).length} rekanan dinilai`,'8|Ranking & Rekomendasi Vendor']];
- const mods=MENU.map((m,i)=>({m,i})).filter(({m})=>S.cat==='Semua Modul'||m.cat===S.cat).sort((a,b)=>(b.i===8)-(a.i===8));
+ const mods=MENU.map((m,i)=>({m,i})).filter(({m})=>!m.hide&&(S.cat==='Semua Modul'||m.cat===S.cat)).sort((a,b)=>[8,0,5,4,3,2,1,7].indexOf(a.i)-[8,0,5,4,3,2,1,7].indexOf(b.i));
  return `<section class="hero"><div><small style="color:#aeb8bd">${new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</small>
  <h1>${sal}, ${USER.nama.split(' ')[0]}.</h1><p>${act.length} tagihan dan ${notifs().length} tugas menunggu tindakan hari ini. Tekan <kbd>/</kbd> untuk mencari invoice, BAP, NPWP atau rekanan.</p>
- <div class="meta"><span>${USER.jabatan}</span><span>${USER.tim}</span><span>${USER.divisi}</span></div></div>${heroArt()}</section>
+ <div class="meta"><span>Hub for Artificial Intelligence, Digital Acquisition & Resource Management</span><span>${USER.jabatan}</span><span>${USER.tim}</span><span>${USER.divisi}</span></div></div>${heroArt()}</section>
  <div class="kpis" style="margin-top:16px">${K.map(k=>`<button class="card kpi" data-a="go" data-v="${k[3]}"><span class="k">${k[0]}</span><span class="v">${k[1]}</span><small>${k[2]}</small></button>`).join('')}</div>
  <section style="margin-top:26px"><div class="ph" style="margin-bottom:12px"><div><h2>Direktori modul</h2><p>Klik sub-fitur untuk langsung membuka halamannya.</p></div></div>
  <div class="tabs" role="tablist">${CATS.map(c=>`<button class="pill ${S.cat===c?'on':''}" data-a="cat" data-v="${c}" role="tab" aria-selected="${S.cat===c}">${c}</button>`).join('')}</div>
@@ -581,7 +581,7 @@ function venView(){
  const L=vList(),f=S.vf,nf=Object.values(f).filter(Boolean).length,besar=V.filter(v=>v.kual==='Besar').length,men=V.filter(v=>v.kual==='Menengah').length;
  const MC=[['Total Rekanan',V.length,`${V.filter(v=>FINAL.includes(v.tahap)).length} sudah terseleksi`,'Semua Data'],['Terkirim ke SAP',V.filter(v=>v.sap).length,'Status Synced','Sudah ke SAP'],['Belum Sinkron SAP',V.filter(v=>!v.sap).length,'Status Pending','Belum ke SAP'],['Akses Edit Terbuka',V.filter(v=>!v.locked).length,'Unlocked untuk rekanan','Akses Edit Terbuka'],['Usaha Besar & Menengah',besar+men,`${besar} besar · ${men} menengah`,'Kualifikasi Besar']];
  const allSel=L.length&&L.every(v=>S.vSel.has(v.i));
- return `<div class="ph"><div><h1>Partner & Vendor Management</h1><p>${esc(S.sub||'Dashboard Rekanan')} · verifikasi 4 stakeholder sebelum menjadi Rekanan Terseleksi.</p></div>
+ return `<div class="ph"><div><h1>Hub & Vendor Management</h1><p>${esc(S.sub||'Dashboard Rekanan')} · verifikasi 4 stakeholder sebelum menjadi Rekanan Terseleksi.</p></div>
  <div class="row"><button class="btn pri" data-a="addV">${ic('plus',17)}Tambah Rekanan Baru</button><button class="btn" data-a="imp">${ic('up',17)}Import Template Excel</button>
  <button class="btn" data-a="exp" data-v="v|csv">${ic('down',17)}CSV</button><button class="btn" data-a="exp" data-v="v|xls">Excel</button><button class="btn" data-a="exp" data-v="v|pdf">PDF</button></div></div>
  <div class="kpis">${MC.map(m=>`<button class="card kpi ${S.vPill===m[3]&&m[3]!=='Semua Data'?'on':''}" data-a="pill" data-v="${m[3]}"><span class="k">${m[0]}</span><span class="v">${m[1]}</span><small>${m[2]}</small></button>`).join('')}</div>
@@ -624,7 +624,7 @@ function iList(){
  return L.sort((a,b)=>(a.stage>5)-(b.stage>5)||b.hari-a.hari)}
 function invView(){
  const B=iBase().filter(x=>x.stage<=5);
- return `<div class="ph"><div><h1>Payment & Invoice System</h1><p>${esc(S.sub||'Monitoring Status Tagihan')} · approval berjenjang 5 tahap dengan pencatatan riwayat approver.</p></div>
+ return `<div class="ph"><div><h1>Invoice & Payment System</h1><p>${esc(S.sub||'Monitoring Status Tagihan')} · approval berjenjang 5 tahap dengan pencatatan riwayat approver.</p></div>
  <div class="row"><button class="btn pri" data-a="post">${ic('plus',17)}Post Invoice</button><button class="btn" data-a="exp" data-v="i|csv">${ic('down',17)}CSV</button><button class="btn" data-a="exp" data-v="i|xls">Excel</button><button class="btn" data-a="exp" data-v="i|pdf">PDF</button></div></div>
  <div class="tabs" style="margin-bottom:14px">${MENU[4].subs.filter(s=>s!=='Post Invoice').map(s=>`<button class="chip ${S.sub===s?'on':''}" data-a="go" data-v="4|${s}">${s}</button>`).join('')}</div>
  <div class="pipe" role="tablist" aria-label="Tahapan approval">${STG.map((s,k)=>{const L=k?B.filter(x=>x.stage===k):B,od=L.filter(x=>x.hari>3).length;
@@ -653,18 +653,18 @@ function cell(c,h){if(c&&c.d!==undefined)return `<td class="nw">${fD(addD(c.d))}
 function genView(){
  const m=MENU[S.mod],sub=S.sub||m.subs[0];
  const g=sub==='Sertifikasi K3/CQSMS'?{c:['Rekanan','Dokumen','Skor CQSMS','Kedaluwarsa','Sisa waktu','Status'],r:k3Rows().map(r=>[r.v.nama,'SMK3 / CQSMS – '+r.v.id,String(r.v.k3),D(r.v.k3e),r.v.k3e<0?`Lewat ${-r.v.k3e} hari`:`${r.v.k3e} hari`,r.st]),link:k3Rows().map(r=>r.v.i)}:GEN[sub];
- const ban=m.st==='Freeze'?`<div class="banner" style="background:var(--warns);color:var(--warn)"><b>Modul berstatus Freeze.</b> Data hanya dapat dibaca; transaksi baru ditahan sementara.</div>`:m.st==='Non-Aktif'?`<div class="banner" style="background:var(--sub);border:1px solid var(--line)"><b>Modul Non-Aktif untuk divisi Anda.</b> Data di bawah adalah pratinjau.</div>`:'';
+ const ban=m.st==='Freeze'?`<div class="banner" style="background:var(--warns);color:var(--warn)"><b>Modul berstatus Freeze.</b> Data hanya dapat dibaca; transaksi baru ditahan sementara.</div>`:(m.st==='Non-Aktif'||/^(Katalog Harga|Rencana Umum)/.test(sub))?`<div class="banner" style="background:var(--sub);border:1px solid var(--line)"><b>Modul Non-Aktif untuk divisi Anda.</b> Data di bawah adalah pratinjau.</div>`:'';
  return `<div class="ph"><div><h1>${esc(m.t)}</h1><p>${esc(m.d)}</p></div>${stTag(m.st)}</div>${ban}
  <div class="tabs" style="margin-bottom:14px">${m.subs.map(s=>`<button class="chip ${s===sub?'on':''}" data-a="go" data-v="${S.mod}|${s}">${s}${s==='Sertifikasi K3/CQSMS'?` <b>${k3Badge()}</b>`:''}</button>`).join('')}</div>
  <div class="tw">${g&&g.r.length?`<table><thead><tr>${g.c.map(h=>`<th class="${/Nilai|HPS|Pagu|Harga/.test(h)?'num':''}">${h}</th>`).join('')}</tr></thead><tbody>${g.r.map((r,k)=>`<tr ${g.link?`class="click" data-a="oVen" data-v="${g.link[k]}"`:''}>${r.map((c,j)=>cell(c,g.c[j])).join('')}</tr>`).join('')}</tbody></table>`:empty('Belum ada data','',' ')}</div>
  <p class="note">${sub==='Sertifikasi K3/CQSMS'?'Data diambil dari profil rekanan; klik baris untuk membuka Profil 360°.':'Data contoh untuk keperluan demo.'}</p>`}
 function settings(){
- const steps=[['Buka Beranda, tekan / lalu ketik “BAP-001” atau sebuah NPWP.','-1|'],['Di Partner & Vendor, buka Calon Rekanan dan centang verifikasi 4 stakeholder.','0|Calon Rekanan'],['Klik nama rekanan untuk melihat Profil 360°, performa dan audit log.','0|Rekanan Terseleksi'],['Di Payment & Invoice, klik kartu tahapan lalu buka sebuah tagihan.','4|Monitoring Status Tagihan'],['Tekan Approve & Lanjutkan Tahap; nama Anda tercatat di timeline.','4|Monitoring Status Tagihan'],['Buka AI DECISION di menu kiri, pilih Performa 50 Kriteria, lalu lihat radar dan 18 kriteria hijau (GSCM).','8|Performa 50 Kriteria'],['Buka asisten di pojok kanan bawah dan pilih pertanyaan cepat.','']];
+ const steps=[['Buka Beranda, tekan / lalu ketik “BAP-001” atau sebuah NPWP.','-1|'],['Di Hub & Vendor Management, buka Calon Rekanan dan centang verifikasi 4 stakeholder.','0|Calon Rekanan'],['Klik nama rekanan untuk melihat Profil 360°, performa dan audit log.','0|Rekanan Terseleksi'],['Di Invoice & Payment System, klik kartu tahapan lalu buka sebuah tagihan.','4|Monitoring Status Tagihan'],['Tekan Approve & Lanjutkan Tahap; nama Anda tercatat di timeline.','4|Monitoring Status Tagihan'],['Buka AI DECISION di menu kiri, pilih Performa 50 Kriteria, lalu lihat radar dan 18 kriteria hijau (GSCM).','8|Performa 50 Kriteria'],['Buka asisten di pojok kanan bawah dan pilih pertanyaan cepat.','']];
  return `<div class="ph"><div><h1>Settings & Tutorial</h1><p>Profil pengguna, panduan demo untuk presentasi, dan pengaturan data contoh.</p></div></div>
  <div class="two"><div class="card"><h3>Panduan demo 7 langkah</h3><ol style="margin:12px 0 0;padding-left:20px;display:grid;gap:10px">${steps.map(s=>`<li>${s[0]} ${s[1]?`<button class="btn sm" data-a="${s[1]==='-1|'?'home':'go'}" data-v="${s[1]}">Buka</button>`:`<button class="btn sm" data-a="chat">Buka asisten</button>`}</li>`).join('')}</ol></div>
  <div class="gap"><div class="card"><h3>Profil pengguna</h3><dl class="kv" style="margin-top:12px"><div><dt>Nama</dt><dd>${USER.nama}</dd></div><div><dt>Jabatan</dt><dd>${USER.jabatan}</dd></div><div><dt>Divisi</dt><dd>${USER.divisi}</dd></div><div><dt>Tim</dt><dd>${USER.tim}</dd></div><div><dt>Hak akses</dt><dd>Approver semua tahap (mode demo)</dd></div></dl></div>
  <div class="card"><h3>Data contoh</h3><p class="muted">Semua perubahan (approval, verifikasi, lock) disimpan sementara di halaman ini dan hilang saat dimuat ulang.</p><button class="btn badb" data-a="reset">Reset data demo</button></div>
- <div class="card"><h3>Tentang prototipe</h3><p class="muted" style="margin:6px 0 0">HAIDAR SMART v0.2, tampilan dengan data contoh, dijalankan di Streamlit. Menu AI DECISION memuat 50 kriteria penilaian termasuk Green Supply Chain Management. Versi produksi direncanakan terhubung ke ERP/SAP dan model CatBoost hybrid.</p></div></div></div>`}
+ <div class="card"><h3>Tentang prototipe</h3><p class="muted" style="margin:6px 0 0">HAIDAR AI (Hub for Artificial Intelligence, Digital Acquisition & Resource Management) v0.3, tampilan dengan data contoh, dijalankan di Streamlit. Menu AI DECISION memuat 50 kriteria penilaian termasuk Green Supply Chain Management. Versi produksi direncanakan terhubung ke ERP/SAP dan model CatBoost hybrid.</p></div></div></div>`}
 
 /* ---------- drawers ---------- */
 function venDrawer(v){
@@ -713,7 +713,7 @@ function modalHTML(m){
  const head=(t,s)=>`<div class="dh"><div><small>${s}</small><h2>${esc(t)}</h2></div><button class="iconbtn" data-a="mclose" aria-label="Tutup">${ic('x')}</button></div>`;
  if(m.type==='doc')return head(m.title,'Pratinjau dokumen')+`<div class="db"><div class="paper"><h3>${esc(m.title.toUpperCase())}</h3><div class="c">Nomor: ${esc(m.no)}</div><table><tbody>${m.lines.map(l=>`<tr><td>${esc(l[0])}</td><td>: ${esc(l[1])}</td></tr>`).join('')}</tbody></table><div class="stamp"><span>Pihak Pertama<br><br><br><b>${esc(m.a)}</b></span><span>Pihak Kedua<br><br><br><b>${esc(m.b)}</b></span></div></div><p class="note">Pratinjau tiruan untuk demo; versi produksi menampilkan berkas PDF asli.</p></div>`;
  if(m.type==='exp'){const R=rowsFor(m.kind),n=R.length-1,lab={csv:'CSV',xls:'Excel',pdf:'PDF'}[m.fmt];
-  if(m.fmt==='pdf')return head('Laporan '+(m.kind[0]==='v'?'data rekanan':'status tagihan'),'Export PDF · '+n+' baris')+`<div class="db"><div class="paper" style="overflow-x:auto"><h3>HAIDAR SMART · ${m.kind[0]==='v'?'Laporan Data Rekanan':'Laporan Status Tagihan'}</h3><div class="c">Dicetak ${fDT(new Date())} oleh ${USER.nama}</div><table style="font-size:12.5px"><thead><tr>${R[0].map(h=>`<th style="background:#f0f1ee;color:#333">${esc(h)}</th>`).join('')}</tr></thead><tbody>${R.slice(1).map(r=>`<tr>${r.map(c=>`<td style="border-bottom:1px solid #e3e3e3;padding:4px 6px">${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note">Unduhan dan cetak PDF langsung aktif setelah aplikasi di-deploy; di pratinjau ini laporan ditampilkan sebagai halaman.</p></div>`;
+  if(m.fmt==='pdf')return head('Laporan '+(m.kind[0]==='v'?'data rekanan':'status tagihan'),'Export PDF · '+n+' baris')+`<div class="db"><div class="paper" style="overflow-x:auto"><h3>HAIDAR AI · ${m.kind[0]==='v'?'Laporan Data Rekanan':'Laporan Status Tagihan'}</h3><div class="c">Dicetak ${fDT(new Date())} oleh ${USER.nama}</div><table style="font-size:12.5px"><thead><tr>${R[0].map(h=>`<th style="background:#f0f1ee;color:#333">${esc(h)}</th>`).join('')}</tr></thead><tbody>${R.slice(1).map(r=>`<tr>${r.map(c=>`<td style="border-bottom:1px solid #e3e3e3;padding:4px 6px">${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note">Unduhan dan cetak PDF langsung aktif setelah aplikasi di-deploy; di pratinjau ini laporan ditampilkan sebagai halaman.</p></div>`;
   const txt=R.map(r=>r.map(c=>m.fmt==='csv'?csvq(c):c.replace(/\t/g,' ')).join(m.fmt==='csv'?',':'\t')).join('\n');
   return head('Export '+lab,n+' baris data')+`<div class="db"><textarea class="ta" id="ta" readonly>${esc(txt)}</textarea><div class="row"><button class="btn pri" data-a="copyTa">${ic('copy',16)}Salin ${lab}</button><small>${m.fmt==='xls'?'Format tab-separated: tempel langsung ke Excel.':'Simpan teks ini sebagai file .csv.'} Unduhan file otomatis aktif setelah aplikasi di-deploy.</small></div></div>`}
  if(m.type==='imp'){const tpl='nama_perusahaan,email,kontak,npwp,bidang_usaha,wilayah,kualifikasi,divisi\nPT Contoh Konstruksi,admin@contoh.co.id,Andi,16.789.012.3-111.000,Pekerjaan Beton,Jawa,Menengah,Divisi Gedung';
@@ -754,7 +754,7 @@ function bot(q){
  if(/pending|antrean|berapa|ringkas/.test(s)){const A=actI();return `Saat ini ada <b>${A.length} tagihan</b> senilai ${rpS(A.reduce((a,x)=>a+x.nilai,0))} di antrean:<ul>${STG.slice(1).map((t,k)=>`<li>${t}: ${A.filter(x=>x.stage===k+1).length}</li>`).join('')}</ul>`}
  return `Saya bisa membantu cek status tagihan (mis. “status BAP-005”), ranking AI Decision, vendor paling hijau, daftar tagihan overdue, rekomendasi rekanan per bidang (beton, baja, aspal, precast, alat berat…), sertifikat yang hampir kedaluwarsa, dan SOP. Pilih pertanyaan cepat di bawah.`}
 function chatHTML(){
- return `<section class="chat" role="dialog" aria-label="Asisten HAIDAR SMART"><header><span class="logo" style="width:36px;height:36px">${ic('bot',20)}</span><div><b>Asisten HAIDAR SMART</b><small>Simulasi berbasis aturan · membaca data di aplikasi</small></div><button class="iconbtn" data-a="chat" aria-label="Tutup asisten">${ic('x',16)}</button></header>
+ return `<section class="chat" role="dialog" aria-label="Asisten HAIDAR AI"><header><span class="logo" style="width:36px;height:36px">${ic('bot',20)}</span><div><b>Asisten HAIDAR AI</b><small>Simulasi berbasis aturan · membaca data di aplikasi</small></div><button class="iconbtn" data-a="chat" aria-label="Tutup asisten">${ic('x',16)}</button></header>
  <div class="msgs" id="msgs">${S.chat.map(c=>`<div class="msg ${c.f}">${c.h}</div>`).join('')}</div>
  <div class="chips">${CHIPS.map(c=>`<button data-a="ask" data-v="${c}">${c}</button>`).join('')}</div>
  <form id="chatf"><input id="cq" placeholder="Tanya status BAP, vendor, SOP…" autocomplete="off" aria-label="Pertanyaan"><button class="iconbtn" style="background:var(--acc);color:#fff;border:0" aria-label="Kirim">${ic('send',18)}</button></form></section>`}
@@ -896,7 +896,7 @@ function aiHome(){
  const avg=R.reduce((a,x)=>a+x.s,0)/R.length,avgG=R.reduce((a,x)=>a+x.g,0)/R.length;
  const catAvg=CATG.map((_,g)=>R.reduce((a,x)=>a+catSc(x.v)[g],0)/R.length),weak=catAvg.indexOf(Math.min(...catAvg)),gBest=[...R].sort((a,b)=>b.g-a.g)[0];
  const un=V.length-all.length,low=R.filter(x=>catSc(x.v)[weak]<60).length;
- return `<section class="hero"><div><small style="color:#aeb8bd">HAIDAR SMART · Keputusan pemilihan rekanan berbasis data</small><h1>AI DECISION</h1><p>Menilai vendor, subkon dan mandor dari <b>50 kriteria</b> yang mencakup mutu, biaya, waktu, K3 dan <b>Green Supply Chain Management</b>, lalu memberi peringkat dan rekomendasi.</p>
+ return `<section class="hero"><div><small style="color:#aeb8bd">HAIDAR AI · Keputusan pemilihan rekanan berbasis data</small><h1>AI DECISION</h1><p>Menilai vendor, subkon dan mandor dari <b>50 kriteria</b> yang mencakup mutu, biaya, waktu, K3 dan <b>Green Supply Chain Management</b>, lalu memberi peringkat dan rekomendasi.</p>
  <div class="meta"><span>${all.length} rekanan dinilai</span><span>10 kategori</span><span>${GK.length} kriteria hijau</span><span>Bobot: ${S.pre}</span></div></div>${heroArt()}</section>
  <div class="kpis" style="margin-top:16px">${kpiS('Rata-rata Skor AI',Math.round(avg),'dari 100')}${kpiS('Rata-rata Indeks Hijau',Math.round(avgG),'GSCM, dari 100')}${kpiS('Direkomendasikan',nR,'siap diundang lelang')}${kpiS('Bersyarat / Ditolak',nB+' / '+nT,'perlu pembinaan atau dihindari')}</div>
  <div class="two" style="margin-top:18px"><section class="card"><div class="row" style="justify-content:space-between"><h3>Peringkat teratas</h3><button class="btn sm" data-a="go" data-v="8|Ranking & Rekomendasi Vendor">Lihat semua</button></div>
@@ -985,7 +985,7 @@ function renderChat(){$('#chat').innerHTML=S.chatOpen?chatHTML():'';const m=$('#
 function refreshInv(){const e=$('#itbl');if(e)e.innerHTML=iTable()}
 
 /* ---------- actions ---------- */
-function go(mod,sub){S.mod=mod;S.sub=mod<0?null:(sub||MENU[mod].def||MENU[mod].subs[0]||null);if(mod>=0)S.open[mod]=true;S.mob=false;S.nOpen=false;S.q='';S.vSel.clear();S.iSel.clear();S.iStage=0;
+function go(mod,sub){if(mod===6)mod=1;S.mod=mod;S.sub=mod<0?null:(sub||MENU[mod].def||MENU[mod].subs[0]||null);if(mod>=0)S.open[mod]=true;S.mob=false;S.nOpen=false;S.q='';S.vSel.clear();S.iSel.clear();S.iStage=0;
  if(mod===0)S.vfOpen=S.sub==='Cek Posisi Rekanan'||S.vfOpen;
  render();window.scrollTo(0,0);if(mod===4&&sub==='Post Invoice'){S.mdl={type:'post'};renderModal()}}
 function openInv(no){const x=I.find(i=>i.no===no);if(!x)return;if(S.mod!==4)go(4,x.jenis==='Operasional'?'Tagihan Operasional/Kantor Pusat':'Monitoring Status Tagihan');S.drw={t:'i',id:no};S.note='';S.nOpen=false;render()}
@@ -1024,7 +1024,7 @@ const A={
  idoc:v=>{const [no,d]=v.split('|'),x=I.find(i=>i.no===no),ven=V[x.vi];docModal(d,no+'/'+d.split(' ').map(w=>w[0]).join('').toUpperCase(),[['Nomor kontrak',x.ktr],['Pekerjaan',x.pek],['Proyek',x.proj],['Nilai',rp(x.nilai)],['Terbilang','(sesuai nilai tagihan)'],['Rekanan',ven.nama],['Tanggal',fD(x.hist[0].t)]],APR[0][0],ven.kontak)},
  exp:v=>{const [kind,fmt]=v.split('|');S.mdl={type:'exp',kind,fmt};renderModal()},
  imp:()=>{S.mdl={type:'imp'};renderModal()},addV:()=>{S.mdl={type:'addV'};renderModal()},post:()=>{S.mdl={type:'post'};renderModal()},
- chat:()=>{S.chatOpen=!S.chatOpen;if(S.chatOpen&&!S.chat.length)S.chat.push({f:'bot',h:`Halo ${USER.nama.split(' ')[0]}, saya Asisten HAIDAR SMART. ${bot('')}`});renderChat();if(S.chatOpen)$('#cq')?.focus()},
+ chat:()=>{S.chatOpen=!S.chatOpen;if(S.chatOpen&&!S.chat.length)S.chat.push({f:'bot',h:`Halo ${USER.nama.split(' ')[0]}, saya Asisten HAIDAR AI. ${bot('')}`});renderChat();if(S.chatOpen)$('#cq')?.focus()},
  ask:v=>ask(v),
  pf:v=>{S.pf=v;keepR()},pj:v=>{S.pj=v;render()},pre:v=>{W=[...PRE[v]];S.pre=v;render()},
  aiPerf:v=>{S.pv=+v;S.pf='all';go(8,'Performa 50 Kriteria')},

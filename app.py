@@ -1,4 +1,4 @@
-"""HAIDAR SMART: portal Supply Chain & Vendor dengan AI DECISION.
+"""HAIDAR AI (Hub for Artificial Intelligence, Digital Acquisition & Resource Management).
 
 Seluruh antarmuka ada di haidar.html (tampilan dan fitur persis seperti
 prototipe artifact). File ini hanya membungkusnya agar bisa dijalankan
@@ -10,7 +10,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="HAIDAR SMART | AI Vendor Portal",
+    page_title="HAIDAR AI | Hub for AI, Digital Acquisition & Resource Management",
     page_icon="🏗️",
     layout="wide",
     initial_sidebar_state="collapsed",
